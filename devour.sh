@@ -9,8 +9,8 @@ ARGS=$*
 CMD="${ARGS%% -- *}"
 FILE="${ARGS##* -- }"
 [ "$CMD" != "$FILE" ] && SAFEFILE=$(echo "$FILE" | sed 's/ /\\ /g')
-WID=$(xdo id)
+WID=$(xdotool getactivewindow)
 
-xdo hide
+xdotool windowunmap "$WID"
 $SHELL -i -c "$CMD $SAFEFILE > /dev/null 2>&1; exit"
-xdo show "$WID"
+xdotool windowmap "$WID"

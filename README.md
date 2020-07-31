@@ -1,10 +1,15 @@
+# Notes about this fork
+
+The original implementation by [salman-abedin](https://github.com/salman-abedin/devour) uses [xdo](https://github.com/baskerville/xdo) which caused a whole lot of problems. In fact, it never worked reliably on my system at all (Ubuntu 18.04 LTS).
+In this fork I replaced the `xdo` dependency with [xdotool](https://github.com/jordansissel/xdotool) a much more standard and reliable implementation. Works like a charm.
+
+# Devour: Window Manager agnostic swallowing feature for terminal emulators
+
 ![](demo/preview.gif)
 
 # Demonstration done by [DistroTube](https://www.youtube.com/channel/UCVls1GmFKf6WlTraIb_IaJg)
 
 [![](demo/youtube.png)](https://www.youtube.com/watch?v=mBNLzHcUtTo&t=5m22s)
-
-# Devour: Window Manager agnostic swallowing feature for terminal emulators
 
 Devour hides your terminal window before launching an external program and unhides it after quitting.
 
@@ -16,12 +21,12 @@ and a fork of
 
 ## Dependencies
 
--  sed, [xdo](https://github.com/baskerville/xdo)
+-  sed, [xdotool](https://github.com/jordansissel/xdotool)
 
 ## Installation
 
 ```sh
-git clone https://github.com/salman-abedin/devour.git && cd devour && sudo make install
+git clone https://github.com/pabloariasal/devour.git && cd devour && sudo make install
 ```
 
 ## Usage
